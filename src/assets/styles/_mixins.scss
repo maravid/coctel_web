@@ -1,0 +1,27 @@
+@mixin text-decoration-style ($type: none) {
+    text-decoration: $type;
+}
+
+@mixin custom-text-properties($font-size: 1rem, $line-height: inherit, $font-weight: inherit) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+@mixin prefix-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+@mixin inline-block-with-padding($padding-bottom: 0) {
+    display: inline-block;
+    padding-bottom: $padding-bottom;
+}
+
+@mixin custom-padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    padding: $top * $main-separation $right * $main-separation $bottom * $main-separation $left * $main-separation;
+}
+
+@mixin custom-margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    margin: $top * $main-separation $right * $main-separation $bottom * $main-separation $left * $main-separation;
+}

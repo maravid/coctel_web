@@ -1,27 +1,107 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+	<link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+	<title>Funchal</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="María Rosa Aravid">
+	<meta name="description" content="Visita Funchal">
+
+	<!-- <link rel="icon" type="image/png" href="./img/favicon.ico" sizes="48x48"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+
+</head>
+
+<body>
+	<div id="wrapper">
+	
+		<header id="main_header">
+			<div class="content">
+				<h1><a href="index.html">FUNCHAL<span> Madeira</span></a></h1>
+				<nav>				
+					<ul>
+						<li><a href="#">DÓNDE ALOJARSE</a></li>
+						<li><a href="#">GASTRONOMÍA</a></li>
+						<li><a href="#">QUÉ HACER</a></li>
+					</ul>
+				</nav>
+			</div>		
+		</header>
+
+		<main id="index">
+		
+			<div id="hero">
+			
+				<div class="content">
+					<h2>FUNCHAL - Visita la perla del Atlántico</h2>
+				</div>
+				
+			</div>
+			
+			<div class="content">
+		
+				<section>
+					<h3>La capital: cultura, naturaleza y espíritu cosmopolita</h3>
+
+					<p>Situada en una extensa ladera frente al Atlántico en forma de anfiteatro natural, Funchal es el mayor centro turístico, comercial y cultural de Madeira. Fue elevada al rango de ciudad el 21 de agosto de 1508, por cédula real del rey Manuel I de Portugal, la historia de la capital de este archipiélago suma ya varios siglos de tradiciones, cultura y cosmopolitismo europeo. Todo ello, sin perder su vínculo con la exuberante naturaleza que la rodea.</p>
+					
+					<p>La ciudad debe su nombre a una hierba silvestre de olor dulce, conocida tradicionalmente como hinojo (Foeniculum Vulgare), que abundaba en la época de su asentamiento. Más tarde, algunos productos regionales excelentes, como el azúcar o el vino (iconos incorporados en el escudo municipal, todavía hoy ex libris de Madeira), resultaron fundamentales para la economía local, convirtiendo a Funchal en un punto de comercio importante en el centro del Atlántico.</p>
+				</section>
+				
+				<section>
+					<h3>Al día</h3>
+					
+					<div id="container">
+						<article>
+							<header class="article_header">
+								<img src="./assets/images/n-geoffrey-hinton.jpg" alt="Imagen artículo peligros IA">
+								<time datetime="2023-05-02">02-05-2023</time>
+								<h4><a href="#">Geoffrey Hinton advierte de los peligros de la IA</a></h4>
+							</header>
+							<div>
+								<p>Geoffrey Hinton, uno de los pioneros de la inteligencia artificial, se une a las voces críticas que alertan sobre los peligros de la <abbr title="Inteligencia Artificial">IA</abbr> y defiende que los científicos deben colaborar en el control de esta tecnología...</p>
+							</div>
+							<footer class="article_footer"><a href="#">&gt; Leer más</a></footer>
+						</article>
+						
+						<article>
+							<header class="article_header">
+								<img src="./assets/images/n-ue-ia.jpg" alt="Imagen artículo ley avance IA">
+								<time datetime="2023-04-20">20-04-2023</time>
+								<h4><a href="#">Bruselas prepara la ley de IA para regular su avance</a></h4>
+							</header>
+							<div>
+								<p>Una propuesta de ley de Inteligencia Artificial se está negociando en estos momentos en el Parlamento Europeo. La ley pretende proteger a los consumidores que usen o sean objeto de sistemas de <abbr title="Inteligencia Artificial">IA</abbr>...</p>
+							</div>
+							<footer class="article_footer"><a href="#">&gt; Leer más</a></footer>
+						</article>
+						
+						<article>
+							<header class="article_header">
+								<img src="./assets/images/n-despacho42.jpg" alt="Imagen artículo Despacho 42">
+								<time datetime="2023-02-23">23-02-2023</time>
+								<h4><a href="#">Despacho 42: Inteligencia artificial y arte</a></h4>
+							</header>
+							<div>
+								<p>En el podcast Despacho 42 de <time datetime="02-23">23 de febrero</time>, el profesor César Córcoles y la profesora Susanna Tesconi conversan sobre <abbr title="Inteligencia Artificial">IA</abbr> y arte con Andrés Burbano, profesor de los estudios de Artes y Humanidades de la <abbr title="Universitat Oberta de Catalunya">UOC</abbr>...</p>
+							</div>
+							<footer class="article_footer"><a href="#">&gt; Leer más</a></footer>
+						</article>
+					</div>
+				</section>
+				
+			</div>
+		</main>
+
+		<include src="./views/footer.html"></include>
+		
+	</div>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+
+</body>
 </html>
