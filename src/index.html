@@ -17,33 +17,18 @@
 </head>
 
 <body>
-	<div id="wrapper">
-	
-		<header id="main_header">
-			<div class="content">
-				<h1><a href="index.html">FUNCHAL<span> Madeira</span></a></h1>
-				<nav>				
-					<ul>
-						<li><a href="#">DÓNDE ALOJARSE</a></li>
-						<li><a href="#">GASTRONOMÍA</a></li>
-						<li><a href="#">QUÉ HACER</a></li>
-					</ul>
-				</nav>
-			</div>		
-		</header>
+	<div class="wrapper">
 
-		<main id="index">
-		
-			<div id="hero">
-			
-				<div class="content">
-					<h2>FUNCHAL - Visita la perla del Atlántico</h2>
+		<include src="./views/header.html"></include>
+
+		<main class="main">
+			<div class="main__hero">
+				<div class="main__hero__content">
+					<h2 class="main__hero__content__header">FUNCHAL - Visita la perla del Atlántico</h2>
 				</div>
-				
 			</div>
 			
 			<div class="content">
-		
 				<section>
 					<h3>La capital: cultura, naturaleza y espíritu cosmopolita</h3>
 
@@ -93,12 +78,10 @@
 						</article>
 					</div>
 				</section>
-				
 			</div>
 		</main>
 
 		<include src="./views/footer.html"></include>
-		
 	</div>
 
     <script type="module" src="./assets/scripts/main.js"></script>
