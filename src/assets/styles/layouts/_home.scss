@@ -1,33 +1,9 @@
 @use "sass:color";
 
 :root {
-	font-size: 16px;
-	font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
-
-img {
-	display: inline;
-}
-
-ul {
-	list-style-type: none;
-
-	@include custom-spacing(padding, 0);
-	@include custom-spacing(margin, 0);
-  
-  li {
-	  @include inline-block-with-padding;
-  }
-}
-
-a { 
-  @include text-decoration-style;
-
-  &:hover  {
-    @include text-decoration-style;
-  }
-}
-
 
 /* Cabecera */
 

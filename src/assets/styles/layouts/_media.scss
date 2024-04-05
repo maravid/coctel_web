@@ -8,7 +8,8 @@
     &__list {
       &__item {
         display: block;
-        padding-bottom: 5px;
+
+        @include custom-spacing(padding, 0, 0, 1);
 
         & + & { @include custom-spacing(margin, 0, 0, 0, 1) }
       }
@@ -63,6 +64,18 @@
 
 @media (max-width: 680px) { 
 
+	.header { text-align: center; 
+    &__title {
+      font-size: 8vw;
+    }
+
+    &__list {
+      &__item {
+        font-size: 2.5vw;
+        @include custom-spacing(padding, 0, 0, 0);
+      }
+    }
+  }
   .main {
     &__section {
       &__info {
@@ -74,6 +87,8 @@
         &__header { font-size: 4.5vw; }
         &__text { font-size: 3.5vw; }
       }
+
+      &__header {  font-size: 4.5vw; }
     }
 
     &__article {

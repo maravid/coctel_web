@@ -16,7 +16,7 @@
   }
 
   img, picture, video, canvas, svg {
-    display: block;
+    display: inline;
     max-width: 100%;
   }
 
@@ -26,4 +26,23 @@
 
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
+  }
+  
+  ul {
+    list-style-type: none;
+  
+    @include custom-spacing(padding, 0);
+    @include custom-spacing(margin, 0);
+    
+    li {
+      @include inline-block-with-padding;
+    }
+  }
+  
+  a { 
+    @include text-decoration-style;
+  
+    &:hover  {
+      @include text-decoration-style;
+    }
   }
