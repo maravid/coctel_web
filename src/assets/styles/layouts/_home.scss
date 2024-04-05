@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
 	font-size: 16px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -9,6 +11,7 @@ img {
 
 ul {
 	list-style-type: none;
+
 	@include custom-spacing(padding, 0);
 	@include custom-spacing(margin, 0);
   
@@ -19,7 +22,10 @@ ul {
 
 a { 
   @include text-decoration-style;
-  &:hover  { @include text-decoration-style; }
+
+  &:hover  {
+    @include text-decoration-style;
+  }
 }
 
 
@@ -28,6 +34,7 @@ a {
 .header {
   @include custom-spacing(padding, 2, 0, 4);
   @include prefix-sticky;
+
   top: 0;
   background-color: $main-color-light;
   box-shadow: $main-header-box-shadow;
@@ -39,6 +46,7 @@ a {
 
   &__title {
     font-size: 3.5rem;
+
     @include inline-block-with-padding(14px);
 
     &--letters {
@@ -47,8 +55,10 @@ a {
       line-height: 0.75rem;
     }
   }
+
   &__link {
     color: $main-color-dark;
+    &:hover { color: $main-color-accent-dark; }
   }
 
   &__list {
@@ -63,9 +73,6 @@ a {
       }
     }
   }
-
-  &__link { color: $main-color-dark; }
-  &__link:hover { color: $main-color-accent-dark; }
 }
 
 
@@ -74,6 +81,7 @@ a {
 .footer {
   background-color: $main-color-dark;
   color: $main-color-light;
+
   @include custom-spacing(padding, 7, 0, 5);
   @include custom-spacing(margin, 0);
 
@@ -83,7 +91,9 @@ a {
   }
 
   &__copyright { font-size: 0.7rem; }
-  &__dot-separator { @include custom-spacing(margin, 0, 1, 0, 1); }
+  &__dot-separator {
+    @include custom-spacing(margin, 0, 1, 0, 1);
+  }
 
   &__social {
     @include custom-spacing(padding, 2, 0, 3);
@@ -106,6 +116,7 @@ a {
 
 .main {
   @include custom-spacing(padding, 0, 0, 7); 
+
   background-color: $main-color-light;
   color: $main-color-dark;
 
@@ -116,6 +127,7 @@ a {
   &__hero {
     @include custom-text-properties(2.75rem);
     @include custom-spacing(padding, 20, 0, 20);
+
     color: $main-color-light;
     background-image: url(./../images/bg-hero-home.jpg);
     background-size: cover;
@@ -128,6 +140,7 @@ a {
 
     &__header {
       @include custom-text-properties(4rem, 5rem, bold);
+
       text-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     }
   }
@@ -143,22 +156,26 @@ a {
       &__header {
         font-size: 2rem;
         text-align: center;
+        text-shadow: 2px 2px color.adjust($main-color-dark, $lightness: 75%);
+
         @include custom-spacing(padding, 5, 0, 3);
-        text-shadow: 2px 2px lighten($main-color-dark, 75%);
       }
       
       &__text {
         @include custom-text-properties(1.25rem);
 
-        & + & { @include custom-spacing(margin, 4); }
+        & + & {
+          @include custom-spacing(margin, 4);
+        }
       }
     }
 
     &__header {
       font-size: 2rem;
       text-align: center;
+      text-shadow: 2px 2px color.adjust($main-color-dark, $lightness: 75%);
+
       @include custom-spacing(padding, 7, 0, 3);
-      text-shadow: 2px 2px lighten($main-color-dark, 75%);
     }
 
     &__info {
@@ -169,8 +186,9 @@ a {
   }
 
   &__article {
-    @include custom-spacing(padding, 0, 0, 6);
     width: 310px; 
+
+    @include custom-spacing(padding, 0, 0, 6);
 
     &__header {
       @include custom-text-properties(1.4rem, 1.3, bold);
@@ -180,9 +198,10 @@ a {
     &__img { border-radius: 10px; }
   
     &__time {
+      display: block;
+
       @include custom-text-properties(0.8rem);
       @include custom-spacing(margin, 2);
-      display: block;
     }
     
     &__text{
@@ -191,13 +210,15 @@ a {
       -webkit-box-orient: vertical;
       overflow: hidden;
       color: $main-color-dark;
+
       @include custom-text-properties(0.9rem, 1.4);	
     }
   
     &__footer {
+      text-transform: uppercase;
+
       @include custom-spacing(padding, 2);
       @include custom-text-properties(0.65rem, inherit, bold);
-      text-transform: uppercase;
     }
   }
 }
