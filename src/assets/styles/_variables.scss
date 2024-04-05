@@ -10,7 +10,9 @@ $mqMinWidth: 1024px;
 $main-header-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
 $main-separation: 6px;
 
-$main-color-light: #FFF;
-$main-color-dark: #000;
-$main-color-accent: #DE2333;
+$main-color-light: #FFFAFA;
+$main-color-dark: #0C0C0C;
+$main-color-accent: #F23545;
+$main-color-accent-dark: #A6212C;
+
 $main-color-shadow: color.scale($main-color-dark, $lightness: 70%);
