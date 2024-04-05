@@ -72,7 +72,6 @@
     &__list {
       &__item {
         font-size: 2.5vw;
-        @include custom-spacing(padding, 0, 0, 0);
       }
     }
   }
