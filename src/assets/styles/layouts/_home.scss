@@ -107,7 +107,7 @@ body {
   &__small-print {
     font-size: 0.9rem;
 
-    &__link { 
+    &--link { 
       color: $main-color-accent-light; 
       &:hover { @include neon-text($main-color-shadow-light); }
     }
@@ -222,6 +222,7 @@ body {
 
 .cocktail-card {
   width: 316px;
+  cursor: pointer;
   height: 420px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;

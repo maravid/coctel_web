@@ -60,10 +60,8 @@
       text-align: center;
     }
 
-    &__list {
-      &__item {
-        display: block; line-height: 1.3;
-      }
+    &__item {
+      display: block; line-height: 1.3;
     }
     
     &__dot-separator { display: none; }
