@@ -1,7 +1,7 @@
-*, *::before, *::after {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
-  
+
   * {
     margin: 0;
   }
@@ -27,10 +27,17 @@
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
-  
+
+  blockquote > p {
+    quotes: '\00AB' '\00BB' '\201E' '\201C';
+  }
+
+  blockquote p::before { content: open-quote; }
+  blockquote p::after { content: close-quote; }
+
   ul {
     list-style-type: none;
-  
+
     @include custom-spacing(padding, 0);
     @include custom-spacing(margin, 0);
     
@@ -38,10 +45,10 @@
       @include inline-block-with-padding;
     }
   }
-  
+
   a { 
     @include text-decoration-style;
-  
+
     &:hover  {
       @include text-decoration-style;
     }

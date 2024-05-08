@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+	<title>Concurso gastronómico</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="María Rosa Aravid">
+	<meta name="description" content="Concurso gastronómico">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<include src="./views/header.html"></include>
+
+		<main class="main">
+		
+			<h2 class="main__title">REC<span class="main__letter">ET</span>AS</h2>
+			<h6 class="main__title main__title--subtitle">¡Pincha en tu cóctel con naranja favorito para ver la receta!</h6>
+
+			<div class="main__content">
+				
+				<flip-card class="cocktail-card" onclick="this.flip()">
+					<section slot="front" class="cocktail-card__front">
+						<img class="cocktail-card__img" src="./assets/images/copazo-4.png" alt="Cóctel mimosa" height="320" />
+						<h3 class="cocktail-card__title cocktail-card__title--front-yellow">Mimosa</h3>					
+					</section>
+					<section slot="back" class="cocktail-card__back">
+						<h3 class="cocktail-card__title">Mimosa</h3>
+						<ul class="cocktail-card__list">
+							<li class="cocktail-card__item">Ingredientes:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">1 parte de champán o vino espumoso</li>
+									<li class="cocktail-card__subitem">1 parte de zumo de naranja</li>
+								</ul>
+							</li>
+							<li class="cocktail-card__item">Preparación:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">Vierta el zumo de naranja en una copa de champán.</li>
+									<li class="cocktail-card__subitem">Añada cuidadosamente el champán o el vino espumoso.</li>
+									<li class="cocktail-card__subitem">Remueva suavemente y sirva.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</flip-card>
+
+				<flip-card class="cocktail-card" onclick="this.flip()">
+					<section slot="front" class="cocktail-card__front">											
+						<img class="cocktail-card__img" src="./assets/images/copazo-2.png" alt="Cóctel tequila sunrise" height="320" />
+						<h3 class="cocktail-card__title cocktail-card__title--front-green">Agua de Valencia</h3>	
+					</section>
+					<section slot="back" class="cocktail-card__back">
+						<h3 class="cocktail-card__title">Agua de Valencia</h3>
+						<ul class="cocktail-card__list">
+							<li class="cocktail-card__item">Ingredientes:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">1 parte de vodka</li>
+									<li class="cocktail-card__subitem">1 parte de ginebra</li>
+									<li class="cocktail-card__subitem">1 parte de zumo de naranja</li>
+									<li class="cocktail-card__subitem">1 parte de cava o champán</li>
+									<li class="cocktail-card__subitem">Rodajas de naranja para decorar</li>
+								</ul>
+							<li class="cocktail-card__item">Preparación:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">Llene una jarra o coctelera con hielo y agregue el vodka, la ginebra y el zumo de naranja.</li>
+									<li class="cocktail-card__subitem">Remueva bien para mezclar los ingredientes.</li>
+									<li class="cocktail-card__subitem">Añada el cava o champán y remueva.</li>
+									<li class="cocktail-card__subitem">Decore con una rodaja de naranja en el borde de una copa de champán y sirva.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</flip-card>
+
+				<flip-card class="cocktail-card" onclick="this.flip()">
+					<section slot="front" class="cocktail-card__front">										
+						<img class="cocktail-card__img" src="./assets/images/copazo-3.png" alt="Cóctel cosmopolitan" height="320" />
+						<h3 class="cocktail-card__title cocktail-card__title--front-pink">Cosmopolitan</h3>
+					</section>
+					<section slot="back" class="cocktail-card__back">
+						<h3 class="cocktail-card__title">Cosmopolitan</h3>
+						<ul class="cocktail-card__list">
+							<li class="cocktail-card__item">Ingredientes:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">1 &frac12; partes de vodka</li>
+									<li class="cocktail-card__subitem">&frac12; parte de triple sec (licor de naranja)</li>
+									<li class="cocktail-card__subitem">&frac12; parte de zumo de arándanos</li>
+									<li class="cocktail-card__subitem">&frac12; parte de zumo de lima fresco</li>
+									<li class="cocktail-card__subitem">Cáscara de limón o naranja para decorar</li>
+								</ul>
+							</li>
+							<li class="cocktail-card__item">Preparación:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">Agite todos los ingredientes con hielo en una coctelera.</li>
+									<li class="cocktail-card__subitem">Cuele la mezcla en una copa de cóctel previamente enfriada.</li>
+									<li class="cocktail-card__subitem">Decore con una cáscara de limón o naranja y sirva.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</flip-card>
+
+				<flip-card class="cocktail-card" onclick="this.flip()">
+					<section slot="front" class="cocktail-card__front">										
+						<img class="cocktail-card__img" src="./assets/images/copazo-1.png" alt="Cóctel destornillador" height="320" />
+						<h3 class="cocktail-card__title  cocktail-card__title--front-yellow">Destornillador</h3>	
+					</section>
+					<section slot="back" class="cocktail-card__back">
+						<h3 class="cocktail-card__title">Destornillador</h3>
+						<ul class="cocktail-card__list">
+							<li class="cocktail-card__item">Ingredientes:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">1 &frac12; partes de vodka</li>
+									<li class="cocktail-card__subitem">3 partes de zumo de naranja</li>
+									<li class="cocktail-card__subitem">Rodaja de naranja para decorar</li>
+								</ul>
+							</li>
+							<li class="cocktail-card__item">Preparación:
+								<ul class="cocktail-card__sublist">
+									<li class="cocktail-card__subitem">Vierta el vodka en un vaso alto lleno de hielo.</li>
+									<li class="cocktail-card__subitem">Agregue el zumo de naranja y remueva suavemente.</li>
+									<li class="cocktail-card__subitem">Decore con una rodaja de naranja en el borde del vaso y sirva.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</flip-card>
+
+			</div>
+
+		</main>
+
+		<include src="./views/footer.html"></include>
+	</div>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+	
+</body>
+</html>
+

@@ -2,52 +2,79 @@
 
 :root {
   font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $font-family-sans-serif;
+  color: $main-color-light;
+}
+
+body {
+  background: $main-color-dark url("../images/bg.jpg") center no-repeat;
+  background-size: cover;
+  margin: 0;
+  color: $main-color-light;
 }
 
 /* Cabecera */
 
 .header {
-  @include custom-spacing(padding, 2, 0, 4);
-  @include prefix-sticky;
-
-  top: 0;
-  background-color: $main-color-light;
-  box-shadow: $main-header-box-shadow;
+  font-family: "Tilt Neon", sans-serif;
+  padding: 25px 0 15px;
+  line-height: 0.85;
+  color: $main-color-accent-light;
 
   &__content {
     width: $mqMinWidth;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    container-type: inline-size;
+    container-name: header;
   } 
 
-  &__title {
-    font-size: 3.5rem;
+  &__name { display: block; }
 
-    @include inline-block-with-padding(14px);
+  &__title {
+    font-size: 3rem;
+
+    @include neon-text($main-color-shadow-light);
+  }
+
+  &__subtitle {
+    padding: 25px 0 15px;
+    text-align: center;
+    font-size: 1.65rem;
+    font-weight: 300;
+    color: $main-color-accent;
 
     &--letters {
-      display: block;
-      margin: 0 0 25px 0;
-      line-height: 0.75rem;
+      color: $main-color-accent;
+      @include neon-text($main-color-shadow);
     }
   }
 
   &__link {
-    color: $main-color-dark;
-    &:hover { color: $main-color-accent-dark; }
+    color: $main-color-accent-light;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    line-height: 1;
+    justify-content: flex-start;
   }
+}
 
-  &__list {
-    list-style-type: none;
-    font-size: 1rem;
 
-    &__item {
-      font-weight: bold;
+/* Menú */
 
-      & + & {
-        @include custom-spacing(margin, 0, 0, 0, 20);
-      }
-    }
+.menu {
+  width: 500px;
+  text-align: right;
+  font-size: 20px;
+
+  &__item { margin-left: 30px;  }
+
+  & :where(.menu__link) {
+    color: $main-color-accent-light;
+    &:hover { @include neon-text($main-color-shadow-light); }
   }
 }
 
@@ -55,8 +82,7 @@
 /* Pie de página */
 
 .footer {
-  background-color: $main-color-dark;
-  color: $main-color-light;
+  box-shadow: $main-header-box-shadow;
 
   @include custom-spacing(padding, 7, 0, 5);
   @include custom-spacing(margin, 0);
@@ -82,119 +108,404 @@
 
     &__link { 
       color: $main-color-light; 
-      &:hover { color: $main-color-accent-dark; }
+      &:hover { color: $main-color-accent-light; }
     }
   }
 }
+
+/* Página de inicio */
+
+.hero {
+  margin: 0 auto;
+  width: $mqMinWidth;
+  text-align: left;
+
+  container-type: inline-size;
+  container-name: hero;
+
+  &__title {
+    font-size: 2rem;
+    font-family: "Tilt Neon", sans-serif;
+    line-height: 1.2;
+    color: $main-color-accent-light;
+    
+    &--bright {
+      @include neon-text($main-color-shadow-light);
+    }
+  }
+}
+
 
 
 /* Contenido principal */
 
 .main {
   @include custom-spacing(padding, 0, 0, 7); 
+  container-type: inline-size;
+  container-name: main;
 
-  background-color: $main-color-light;
-  color: $main-color-dark;
-
-  a { color: $main-color-accent; 
-    &:hover { color: $main-color-accent-dark; }
-  }
-
-  &__hero {
-    @include custom-text-properties(2.75rem);
-    @include custom-spacing(padding, 20, 0, 20);
-
-    color: $main-color-light;
-    background-image: url(./../images/bg-hero-home.jpg);
-    background-size: cover;
+  &__title {
+    font-size: 4em;
     text-align: center;
+    color: $main-color-accent;
+    line-height: 1.2;
+    margin: 25px 0;
 
-    &__content {
-      width: $mqMinWidth;
-      margin: 0 auto;
-    }
+    @include neon-text($main-color-shadow);
 
-    &__header {
-      @include custom-text-properties(4rem, 5rem, bold);
-
-      text-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    &--subtitle {
+      font-size: 1.25rem;
+      font-weight: 200;
     }
   }
+
+
+  &__letter {
+    animation: blink linear infinite 2s;
+    &--second { animation: blink linear infinite 3s; }
+  }
+  
 
   &__content {
     width: $mqMinWidth;
-    margin: 0 auto;
+    display: flex;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.article {
+  width: 310px; 
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0 0 30px;
+  container-type: inline-size;
+  container-name: article;
+
+  &__header {
+    margin: 10px 0;
   }
 
-  &__section {
+  &__title {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    color: $main-color-accent;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 12px 0 0;
 
-    &--first {
-      &__header {
-        font-size: 2rem;
-        text-align: center;
-        text-shadow: 2px 2px color.adjust($main-color-dark, $lightness: 75%);
+    @include neon-text($main-color-shadow);
+  }
 
-        @include custom-spacing(padding, 5, 0, 3);
-      }
+  &__age      { font-size: 0.9rem; text-transform: uppercase ; }
+  &__location { border-radius: 10px; }
+  
+  &__img {
+    @include neon-border($main-color-accent-light);
+  }
+  
+  &__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    hyphens: auto;
+
+    @include custom-text-properties(0.9rem, 1.4);	
+  }
+}
+
+/* Recetas */
+
+.cocktail-card {
+  width: 316px;
+  height: 420px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 20px 0;
+
+  &__list {
+    font-weight: 600;
+    margin: 0 0 0 15px;
+  }
+
+  &__item {
+    margin: 16px 0 0 0;
+  }
+
+  &__sublist {
+    list-style-type: square;
+    line-height: 1.35;
+  }
+
+  &__subitem {
+    font-weight: 300;
+    margin: 0 0 0 30px;
+    display: list-item;
+  }
+
+  &__title {
+    font-size: 2rem;
+    padding: 15px 0 0;
+    text-align: center;
+    line-height: 1.25;
+    color: $main-color-accent;
+
+    @include neon-text($main-color-shadow);
+
+    &--front-yellow {
+      font-size: 2.5rem;
+      padding: 2px 10px;
+
+      color: $neon-yellow;
+      @include neon-text($neon-yellow-shadow);
+    }
+
+    &--front-green {
+      font-size: 2.5rem;
+      padding: 2px 10px;
+      margin: -17px 0 0;
+      line-height: 1.05;
+
+      color: $neon-green;
+      @include neon-text($neon-green-shadow);
+    }
+
+    &--front-pink {
+      font-size: 2.5rem;
+      padding: 2px 10px;
+
+      color: $neon-pink;
+      @include neon-text($neon-pink-shadow);
+    }
+  }
+
+  &__front {
+    text-align: center;
+    @include neon-border($main-color-accent-light);
+  }
+
+  &__back {
+    padding: 0 10px 0 0;
+    @include neon-border($main-color-accent-light);
+  }
+}
+
+
+/* Historia */
+
+.scrollspy {
+
+  &__header {
+    color: $main-color-accent;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    text-align: left;
+
+    @include neon-text($main-color-shadow);
+    font-weight: 200;
+  }
+
+  &__text {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 300;
+    margin: 0 0 20px;
+    font-size: 1.025rem;
+    text-align: justify;
+    hyphens: auto;
+
+    &--big {
+      font-size: 1.75rem;
+      line-height: 1.1;
+      font-family: "Tilt Neon", sans-serif;
+      color: $main-color-accent-light;
+    }
+
+    &--bright {
+      font-size: 1.75rem;
+      line-height: 1.1;
       
-      &__text {
-        @include custom-text-properties(1.25rem);
-
-        & + & {
-          @include custom-spacing(margin, 4);
-        }
-      }
-    }
-
-    &__header {
-      font-size: 2rem;
-      text-align: center;
-      text-shadow: 2px 2px color.adjust($main-color-dark, $lightness: 75%);
-
-      @include custom-spacing(padding, 7, 0, 3);
-    }
-
-    &__info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
-
-  &__article {
-    width: 310px; 
-
-    @include custom-spacing(padding, 0, 0, 6);
-
-    &__header {
-      @include custom-text-properties(1.4rem, 1.3, bold);
-      @include custom-spacing(margin, 2, 0, 1);
-    }
-
-    &__img { border-radius: 10px; }
-  
-    &__time {
-      display: block;
-
-      @include custom-text-properties(0.8rem);
-      @include custom-spacing(margin, 2);
-    }
-    
-    &__text{
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      color: $main-color-dark;
-
-      @include custom-text-properties(0.9rem, 1.4);	
-    }
-  
-    &__footer {
-      text-transform: uppercase;
-
-      @include custom-spacing(padding, 2);
-      @include custom-text-properties(0.65rem, inherit, bold);
+      @include neon-text($main-color-shadow-light);
     }
   }
 }
+
+
+/* Clases de Bootstrap */
+
+.nav { font-family: "Tilt Neon", sans-serif; }
+.nav-link:hover { @include neon-text($main-color-shadow); }
+.nav-link.active:hover { text-shadow: none; }
+
+.carousel-caption {
+  padding-bottom: 0.75rem;
+  @include neon-text-caption;
+}
+
+.carousel__images {
+  @include neon-border($main-color-accent-light);
+}
+
+
+/* Index */
+
+.first-page {
+  width: $mqMinWidth;
+  margin: 0 auto;
+}
+
+.no-grid{
+  &__title{
+    display: none;
+    font-size: 9vw;
+    text-align: center;
+    line-height: 1;
+
+    color: $neon-pink;
+    @include neon-text($neon-pink-shadow);
+  }
+}
+
+.grid-container {
+
+  &__text {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    &--intro {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  
+  &__title {
+    color: $neon-pink;
+    font-size: 5rem;
+    line-height: 1;
+
+    @include neon-text($neon-pink-shadow);
+
+    &--second {
+      color: $neon-yellow;
+      @include neon-text($neon-yellow-shadow)
+    }
+  }
+
+  &__img {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+
+    &--intro {
+      width: 20%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.6rem;
+    margin: 15px 0 0;
+    font-family: "Tilt Neon", sans-serif;
+    color: $main-color-accent-light;
+    line-height: 1.1;
+
+    &--bright {
+      @include neon-text($main-color-shadow-light);
+    }
+  }
+}
+
+.bases {
+
+  &__content {
+    color: $main-color-accent;
+    font-family: "Barlow Condensed", sans-serif;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+
+  &__info {
+
+    margin: 0 0 25px;
+
+    &--title {
+      display: block;
+      font-size: 1.35rem;
+      margin: 0;
+      line-height: 1.5;
+
+      @include neon-text($main-color-shadow);
+    }
+  }
+}
+
+/* Navegadores que soportan grid */
+
+@supports (display: grid) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: center;
+
+    &__img {
+      width: 100%;
+      grid-column: span 2;
+
+      &--intro {
+        width: 75%;
+        grid-column: span 1;
+      }
+    }
+
+    &__text {
+      grid-column: span 2;
+      
+      &--intro {
+        grid-column: span 3;
+      }
+    }
+  }
+}
+
+
+/* Animaciones */
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% { color: $transition-color; }
+  80% { text-shadow: none; }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: $transition-color;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: $transition-color;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+

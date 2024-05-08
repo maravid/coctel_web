@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin text-decoration-style ($type: none) {
     text-decoration: $type;
 }
@@ -19,4 +21,20 @@
 
 @mixin custom-spacing($propiedad, $top: 0, $right: 0, $bottom: 0, $left: 0) {
     #{$propiedad}: $top * $main-separation $right * $main-separation $bottom * $main-separation $left * $main-separation;
+}
+
+@mixin neon-text($color) {
+    font-weight: 300;
+    font-family: "Tilt Neon", sans-serif;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em $color, 0 0 0.5em $color, 0 0 0.1em $color, 0 10px 3px #000000;
+}
+
+@mixin neon-border($color) {
+    border-radius: 10px;
+    border: 3px solid $color;
+    box-shadow: 0 0px 20px, 0 0 2px, 0 0 1em $color, 0 0 0.5em $color, 0 0 0.1em $color, 0 10px 3px #000000;
+}
+
+@mixin neon-text-caption {
+    text-shadow: -1px -1px 0 rgba(255,255,255,.5), 1px 1px 0 rgba(0,0,0,.5), 3px 3px 3px rgba(0,0,0,.5), 10px 10px 20px rgba(0,0,0,.5), 20px 40px 40px rgba(0,0,0,.5); 
 }

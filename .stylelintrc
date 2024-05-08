@@ -1,8 +1,8 @@
 {
- "extends": [
+  "extends": [
     "stylelint-config-recommended-scss"
- ],
- "rules": {
+  ],
+  "rules": {
     "color-no-invalid-hex": true,
     "selector-max-specificity": "0,4,0",
     "property-no-unknown": true,

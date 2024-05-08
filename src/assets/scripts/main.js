@@ -6,6 +6,10 @@
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
+/* Módulo para la galería interactiva de Recetas */
+import "@auroratide/flip-card/lib/define.js";
+import * as bootstrap from 'bootstrap';
+
 /**
  * Write any other JavaScript below
  */
@@ -14,3 +18,4 @@
   const university = "UOC";
   console.log(`Hello, ${university}!`);
 } )();
+
