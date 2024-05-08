@@ -82,7 +82,8 @@ body {
 /* Pie de página */
 
 .footer {
-  box-shadow: $main-header-box-shadow;
+  color: $main-color-accent-light; 
+  font-family: "Tilt Neon", sans-serif;
 
   @include custom-spacing(padding, 7, 0, 5);
   @include custom-spacing(margin, 0);
@@ -104,11 +105,11 @@ body {
   }
   
   &__small-print {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 
     &__link { 
-      color: $main-color-light; 
-      &:hover { color: $main-color-accent-light; }
+      color: $main-color-accent-light; 
+      &:hover { @include neon-text($main-color-shadow-light); }
     }
   }
 }
